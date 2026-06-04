@@ -1,0 +1,25 @@
+aiofiles
+aiohttp
+apscheduler
+asyncpg
+fastapi
+json-repair
+mcp
+neo4j
+numpy
+openai
+pgvector
+pydantic
+pypdf
+psutil
+pytest
+PyYAML
+redis
+sentence-transformers
+tomli; python_version < "3.11"
+torch
+uvicorn
+websockets
+watchdog
+requests
+tenacity<9,>=8.1.0

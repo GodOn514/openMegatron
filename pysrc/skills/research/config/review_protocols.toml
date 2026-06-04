@@ -1,0 +1,20 @@
+[protocols.narrative]
+objective = "Write a structured literature review from top-tier papers, with explicit evidence boundaries."
+screening_steps = [
+  "Search candidate papers by topic.",
+  "Filter by configured top journal/conference policy.",
+  "Rank by venue policy, source influence, paper citations, and recency.",
+  "Build readings, evidence matrix, gap analysis, review, references, and citation checks."
+]
+outputs = ["ranked_papers", "readings", "evidence_matrix", "gap_analysis", "review", "references", "citation_verification"]
+
+[protocols.systematic]
+objective = "Run a lightweight systematic-review protocol with reproducible screening and evidence extraction."
+screening_steps = [
+  "Define research questions and inclusion/exclusion criteria.",
+  "Search candidates and record query, year range, and top-venue policy.",
+  "Deduplicate and screen by title, abstract, venue, and year.",
+  "Extract evidence fields into a matrix.",
+  "Synthesize findings, gaps, limitations, and references with citation verification."
+]
+outputs = ["protocol", "screening_summary", "evidence_matrix", "gap_analysis", "review", "references", "citation_verification"]

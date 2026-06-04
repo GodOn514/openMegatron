@@ -1,0 +1,10 @@
+﻿{
+  "name": "journal-matcher",
+  "version": "1.0.0",
+  "description": "论文投稿期刊/会议推荐工具",
+  "author": "YuanGe AI",
+  "license": "MIT",
+  "keywords": ["journal", "conference", "match", "recommend", "submission"],
+  "scripts": { "match": "python3 scripts/main.py" },
+  "changelog": "v1.0.0: 初始版本"
+}

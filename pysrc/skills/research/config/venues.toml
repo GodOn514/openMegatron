@@ -1,0 +1,429 @@
+strict_top_venue = true
+
+[matching]
+prefixes = [
+  "nature",
+  "science",
+  "cell",
+  "lancet",
+  "jama",
+  "new england journal of medicine",
+  "ieee transactions",
+  "acm transactions"
+]
+
+[[venues]]
+name = "NeurIPS"
+aliases = ["neurips", "nips", "advances in neural information processing systems"]
+type = "conference"
+tier = "flagship"
+domain = ["ai", "ml", "cs"]
+
+[[venues]]
+name = "ICML"
+aliases = ["international conference on machine learning", "icml"]
+type = "conference"
+tier = "flagship"
+domain = ["ai", "ml", "cs"]
+
+[[venues]]
+name = "ICLR"
+aliases = ["international conference on learning representations", "iclr"]
+type = "conference"
+tier = "flagship"
+domain = ["ai", "ml", "cs"]
+
+[[venues]]
+name = "AAAI"
+aliases = ["aaai", "aaai conference on artificial intelligence", "proceedings of the aaai conference on artificial intelligence"]
+type = "conference"
+tier = "top"
+domain = ["ai", "cs"]
+
+[[venues]]
+name = "IJCAI"
+aliases = ["ijcai", "international joint conference on artificial intelligence"]
+type = "conference"
+tier = "top"
+domain = ["ai", "cs"]
+
+[[venues]]
+name = "CVPR"
+aliases = ["cvpr", "computer vision and pattern recognition", "ieee conference on computer vision and pattern recognition", "ieee/cvf conference on computer vision and pattern recognition"]
+type = "conference"
+tier = "flagship"
+domain = ["ai", "cv", "cs"]
+
+[[venues]]
+name = "ICCV"
+aliases = ["iccv", "international conference on computer vision"]
+type = "conference"
+tier = "flagship"
+domain = ["ai", "cv", "cs"]
+
+[[venues]]
+name = "ECCV"
+aliases = ["eccv", "european conference on computer vision"]
+type = "conference"
+tier = "top"
+domain = ["ai", "cv", "cs"]
+
+[[venues]]
+name = "ACL"
+aliases = ["acl", "annual meeting of the association for computational linguistics"]
+type = "conference"
+tier = "flagship"
+domain = ["ai", "nlp", "cs"]
+
+[[venues]]
+name = "EMNLP"
+aliases = ["emnlp", "empirical methods in natural language processing"]
+type = "conference"
+tier = "top"
+domain = ["ai", "nlp", "cs"]
+
+[[venues]]
+name = "NAACL"
+aliases = ["naacl", "north american chapter of the association for computational linguistics"]
+type = "conference"
+tier = "top"
+domain = ["ai", "nlp", "cs"]
+
+[[venues]]
+name = "SIGKDD"
+aliases = ["kdd", "sigkdd", "acm sigkdd", "knowledge discovery and data mining"]
+type = "conference"
+tier = "flagship"
+domain = ["ai", "data", "cs"]
+
+[[venues]]
+name = "SIGIR"
+aliases = ["sigir", "information retrieval", "international acm sigir conference"]
+type = "conference"
+tier = "flagship"
+domain = ["ai", "ir", "cs"]
+
+[[venues]]
+name = "The Web Conference"
+aliases = ["the web conference", "www", "world wide web conference", "international world wide web conference"]
+type = "conference"
+tier = "top"
+domain = ["ai", "web", "cs"]
+
+[[venues]]
+name = "WSDM"
+aliases = ["wsdm", "web search and data mining"]
+type = "conference"
+tier = "top"
+domain = ["ai", "web", "data", "cs"]
+
+[[venues]]
+name = "RecSys"
+aliases = ["recsys", "acm conference on recommender systems"]
+type = "conference"
+tier = "top"
+domain = ["ai", "recommender", "cs"]
+
+[[venues]]
+name = "SIGMOD"
+aliases = ["sigmod", "acm sigmod", "management of data"]
+type = "conference"
+tier = "flagship"
+domain = ["data", "db", "cs"]
+
+[[venues]]
+name = "VLDB"
+aliases = ["vldb", "very large data bases", "proceedings of the vldb endowment", "pvldb"]
+type = "conference"
+tier = "flagship"
+domain = ["data", "db", "cs"]
+
+[[venues]]
+name = "ICDE"
+aliases = ["icde", "international conference on data engineering"]
+type = "conference"
+tier = "top"
+domain = ["data", "db", "cs"]
+
+[[venues]]
+name = "IEEE S&P"
+aliases = ["ieee symposium on security and privacy", "oakland", "ieee s&p"]
+type = "conference"
+tier = "flagship"
+domain = ["security", "cs"]
+
+[[venues]]
+name = "USENIX Security"
+aliases = ["usenix security", "usenix security symposium"]
+type = "conference"
+tier = "flagship"
+domain = ["security", "cs"]
+
+[[venues]]
+name = "ACM CCS"
+aliases = ["ccs", "acm conference on computer and communications security"]
+type = "conference"
+tier = "flagship"
+domain = ["security", "cs"]
+
+[[venues]]
+name = "NDSS"
+aliases = ["ndss", "network and distributed system security symposium"]
+type = "conference"
+tier = "top"
+domain = ["security", "cs"]
+
+[[venues]]
+name = "SIGCOMM"
+aliases = ["sigcomm", "acm sigcomm"]
+type = "conference"
+tier = "flagship"
+domain = ["networking", "cs"]
+
+[[venues]]
+name = "NSDI"
+aliases = ["nsdi", "networked systems design and implementation"]
+type = "conference"
+tier = "top"
+domain = ["systems", "networking", "cs"]
+
+[[venues]]
+name = "SOSP"
+aliases = ["sosp", "symposium on operating systems principles"]
+type = "conference"
+tier = "flagship"
+domain = ["systems", "cs"]
+
+[[venues]]
+name = "OSDI"
+aliases = ["osdi", "operating systems design and implementation"]
+type = "conference"
+tier = "flagship"
+domain = ["systems", "cs"]
+
+[[venues]]
+name = "PLDI"
+aliases = ["pldi", "programming language design and implementation"]
+type = "conference"
+tier = "flagship"
+domain = ["pl", "cs"]
+
+[[venues]]
+name = "POPL"
+aliases = ["popl", "principles of programming languages"]
+type = "conference"
+tier = "flagship"
+domain = ["pl", "cs"]
+
+[[venues]]
+name = "CHI"
+aliases = ["chi", "conference on human factors in computing systems"]
+type = "conference"
+tier = "flagship"
+domain = ["hci", "cs"]
+
+[[venues]]
+name = "UIST"
+aliases = ["uist", "user interface software and technology"]
+type = "conference"
+tier = "top"
+domain = ["hci", "cs"]
+
+[[venues]]
+name = "Journal of Machine Learning Research"
+aliases = ["jmlr", "journal of machine learning research"]
+issn = ["1532-4435"]
+type = "journal"
+tier = "flagship"
+domain = ["ai", "ml", "cs"]
+
+[[venues]]
+name = "Transactions on Machine Learning Research"
+aliases = ["tmlr", "transactions on machine learning research"]
+type = "journal"
+tier = "top"
+domain = ["ai", "ml", "cs"]
+
+[[venues]]
+name = "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+aliases = ["tpami", "ieee transactions on pattern analysis and machine intelligence"]
+issn = ["0162-8828"]
+type = "journal"
+tier = "flagship"
+domain = ["ai", "cv", "cs"]
+
+[[venues]]
+name = "IEEE Transactions on Neural Networks and Learning Systems"
+aliases = ["tnnls", "ieee transactions on neural networks and learning systems"]
+issn = ["2162-237X"]
+type = "journal"
+tier = "top"
+domain = ["ai", "ml", "cs"]
+
+[[venues]]
+name = "IEEE Transactions on Knowledge and Data Engineering"
+aliases = ["tkde", "ieee transactions on knowledge and data engineering"]
+issn = ["1041-4347"]
+type = "journal"
+tier = "top"
+domain = ["data", "ai", "cs"]
+
+[[venues]]
+name = "ACM Computing Surveys"
+aliases = ["acm computing surveys", "computing surveys", "csur"]
+issn = ["0360-0300"]
+type = "journal"
+tier = "top"
+domain = ["cs", "ai"]
+
+[[venues]]
+name = "Artificial Intelligence"
+aliases = ["artificial intelligence"]
+issn = ["0004-3702"]
+type = "journal"
+tier = "top"
+domain = ["ai", "cs"]
+
+[[venues]]
+name = "Journal of Artificial Intelligence Research"
+aliases = ["jair", "journal of artificial intelligence research"]
+issn = ["1076-9757"]
+type = "journal"
+tier = "top"
+domain = ["ai", "cs"]
+
+[[venues]]
+name = "Management Science"
+aliases = ["management science"]
+issn = ["0025-1909"]
+type = "journal"
+tier = "flagship"
+domain = ["management", "operations"]
+
+[[venues]]
+name = "Operations Research"
+aliases = ["operations research"]
+issn = ["0030-364X"]
+type = "journal"
+tier = "flagship"
+domain = ["management", "operations"]
+
+[[venues]]
+name = "Information Systems Research"
+aliases = ["information systems research", "isr"]
+issn = ["1047-7047"]
+type = "journal"
+tier = "flagship"
+domain = ["management", "is"]
+
+[[venues]]
+name = "MIS Quarterly"
+aliases = ["mis quarterly", "misq"]
+issn = ["0276-7783"]
+type = "journal"
+tier = "flagship"
+domain = ["management", "is"]
+
+[[venues]]
+name = "Strategic Management Journal"
+aliases = ["strategic management journal", "smj"]
+issn = ["0143-2095"]
+type = "journal"
+tier = "top"
+domain = ["management"]
+
+[[venues]]
+name = "Academy of Management Journal"
+aliases = ["academy of management journal", "amj"]
+issn = ["0001-4273"]
+type = "journal"
+tier = "flagship"
+domain = ["management"]
+
+[[venues]]
+name = "Academy of Management Review"
+aliases = ["academy of management review", "amr"]
+issn = ["0363-7425"]
+type = "journal"
+tier = "flagship"
+domain = ["management"]
+
+[[venues]]
+name = "Journal of Marketing"
+aliases = ["journal of marketing"]
+issn = ["0022-2429"]
+type = "journal"
+tier = "top"
+domain = ["marketing", "management"]
+
+[[venues]]
+name = "American Economic Review"
+aliases = ["american economic review", "aer"]
+issn = ["0002-8282"]
+type = "journal"
+tier = "flagship"
+domain = ["economics"]
+
+[[venues]]
+name = "Quarterly Journal of Economics"
+aliases = ["quarterly journal of economics", "qje"]
+issn = ["0033-5533"]
+type = "journal"
+tier = "flagship"
+domain = ["economics"]
+
+[[venues]]
+name = "Econometrica"
+aliases = ["econometrica"]
+issn = ["0012-9682"]
+type = "journal"
+tier = "flagship"
+domain = ["economics"]
+
+[[venues]]
+name = "New England Journal of Medicine"
+aliases = ["nejm", "new england journal of medicine"]
+issn = ["0028-4793"]
+type = "journal"
+tier = "flagship"
+domain = ["medicine", "biomedicine"]
+
+[[venues]]
+name = "The Lancet"
+aliases = ["the lancet", "lancet"]
+issn = ["0140-6736"]
+type = "journal"
+tier = "flagship"
+domain = ["medicine", "biomedicine"]
+
+[[venues]]
+name = "JAMA"
+aliases = ["jama", "journal of the american medical association"]
+issn = ["0098-7484"]
+type = "journal"
+tier = "flagship"
+domain = ["medicine", "biomedicine"]
+
+[[venues]]
+name = "Nature Medicine"
+aliases = ["nature medicine"]
+issn = ["1078-8956"]
+type = "journal"
+tier = "flagship"
+domain = ["medicine", "biomedicine"]
+
+[[venues]]
+name = "Journal of the American Medical Informatics Association"
+aliases = ["jamia", "journal of the american medical informatics association"]
+issn = ["1067-5027"]
+type = "journal"
+tier = "top"
+domain = ["medicine", "biomedicine", "ai"]
+
+[[venues]]
+name = "Briefings in Bioinformatics"
+aliases = ["briefings in bioinformatics"]
+issn = ["1467-5463"]
+type = "journal"
+tier = "top"
+domain = ["biomedicine", "bioinformatics"]

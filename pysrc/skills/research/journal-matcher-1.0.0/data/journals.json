@@ -1,0 +1,1515 @@
+[
+  {
+    "id": "jmlr",
+    "name": "Journal of Machine Learning Research",
+    "type": "journal",
+    "if_latest": 5.0,
+    "if_5yr": 6.2,
+    "fields": [
+      "ml",
+      "ai",
+      "statistics"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      3,
+      9
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "machine learning",
+      "statistical learning",
+      "optimization",
+      "deep learning theory"
+    ]
+  },
+  {
+    "id": "tpami",
+    "name": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "type": "journal",
+    "if_latest": 23.6,
+    "if_5yr": 27.8,
+    "fields": [
+      "cv",
+      "ml",
+      "ai",
+      "pattern_recognition"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~15%",
+    "keywords": [
+      "pattern recognition",
+      "computer vision",
+      "machine learning",
+      "AI"
+    ]
+  },
+  {
+    "id": "tnnls",
+    "name": "IEEE Transactions on Neural Networks and Learning Systems",
+    "type": "journal",
+    "if_latest": 13.7,
+    "if_5yr": 14.2,
+    "fields": [
+      "ml",
+      "nn",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~18%",
+    "keywords": [
+      "neural networks",
+      "deep learning",
+      "learning systems"
+    ]
+  },
+  {
+    "id": "jair",
+    "name": "Journal of Artificial Intelligence Research",
+    "type": "journal",
+    "if_latest": 4.5,
+    "if_5yr": 5.8,
+    "fields": [
+      "ai",
+      "ml",
+      "planning",
+      "nlp"
+    ],
+    "cas": "2区",
+    "jcr": "Q2",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "AI",
+      "knowledge representation",
+      "planning",
+      "reasoning"
+    ]
+  },
+  {
+    "id": "mlj",
+    "name": "Machine Learning",
+    "type": "journal",
+    "if_latest": 5.8,
+    "if_5yr": 7.5,
+    "fields": [
+      "ml",
+      "ai",
+      "data_mining"
+    ],
+    "cas": "2区",
+    "jcr": "Q2",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "machine learning",
+      "algorithms",
+      "data mining"
+    ]
+  },
+  {
+    "id": "ijcv",
+    "name": "International Journal of Computer Vision",
+    "type": "journal",
+    "if_latest": 11.6,
+    "if_5yr": 14.1,
+    "fields": [
+      "cv"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~18%",
+    "keywords": [
+      "computer vision",
+      "image processing",
+      "scene understanding"
+    ]
+  },
+  {
+    "id": "cl",
+    "name": "Computational Linguistics",
+    "type": "journal",
+    "if_latest": 4.8,
+    "if_5yr": 6.0,
+    "fields": [
+      "nlp",
+      "cl",
+      "ai"
+    ],
+    "cas": "2区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "computational linguistics",
+      "NLP",
+      "parsing",
+      "semantics",
+      "discourse"
+    ]
+  },
+  {
+    "id": "tacl",
+    "name": "Transactions of the Association for Computational Linguistics",
+    "type": "journal",
+    "if_latest": 6.2,
+    "if_5yr": 8.1,
+    "fields": [
+      "nlp",
+      "cl",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      9
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "NLP",
+      "computational linguistics",
+      "machine translation",
+      "information extraction"
+    ]
+  },
+  {
+    "id": "tro",
+    "name": "IEEE Transactions on Robotics",
+    "type": "journal",
+    "if_latest": 8.2,
+    "if_5yr": 10.5,
+    "fields": [
+      "robotics",
+      "control",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~15%",
+    "keywords": [
+      "robotics",
+      "motion planning",
+      "control",
+      "manipulation"
+    ]
+  },
+  {
+    "id": "ijrr",
+    "name": "The International Journal of Robotics Research",
+    "type": "journal",
+    "if_latest": 9.2,
+    "if_5yr": 11.8,
+    "fields": [
+      "robotics",
+      "control"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~18%",
+    "keywords": [
+      "robotics",
+      "control",
+      "perception",
+      "navigation"
+    ]
+  },
+  {
+    "id": "ral",
+    "name": "IEEE Robotics and Automation Letters",
+    "type": "journal",
+    "if_latest": 4.1,
+    "if_5yr": 4.8,
+    "fields": [
+      "robotics",
+      "automation"
+    ],
+    "cas": "2区",
+    "jcr": "Q2",
+    "review_months": [
+      3,
+      6
+    ],
+    "acceptance": "~30%",
+    "keywords": [
+      "robotics",
+      "automation",
+      "sensors",
+      "control"
+    ]
+  },
+  {
+    "id": "twc",
+    "name": "IEEE Transactions on Wireless Communications",
+    "type": "journal",
+    "if_latest": 9.6,
+    "if_5yr": 10.2,
+    "fields": [
+      "wireless",
+      "comm",
+      "signal"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "wireless communications",
+      "signal processing",
+      "MIMO",
+      "OFDM"
+    ]
+  },
+  {
+    "id": "tcomm",
+    "name": "IEEE Transactions on Communications",
+    "type": "journal",
+    "if_latest": 7.2,
+    "if_5yr": 8.0,
+    "fields": [
+      "comm",
+      "signal",
+      "wireless"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "communications",
+      "coding",
+      "modulation",
+      "information theory"
+    ]
+  },
+  {
+    "id": "tvt",
+    "name": "IEEE Transactions on Vehicular Technology",
+    "type": "journal",
+    "if_latest": 6.1,
+    "if_5yr": 6.8,
+    "fields": [
+      "vehicular",
+      "wireless",
+      "comm",
+      "trans"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "B",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "vehicular technology",
+      "mobile communications",
+      "V2X",
+      "ITS"
+    ]
+  },
+  {
+    "id": "tiv",
+    "name": "IEEE Transactions on Intelligent Vehicles",
+    "type": "journal",
+    "if_latest": 8.8,
+    "if_5yr": 9.5,
+    "fields": [
+      "iv",
+      "autonomous",
+      "robotics",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "intelligent vehicles",
+      "autonomous driving",
+      "ADAS",
+      "V2X"
+    ]
+  },
+  {
+    "id": "tits",
+    "name": "IEEE Transactions on Intelligent Transportation Systems",
+    "type": "journal",
+    "if_latest": 8.5,
+    "if_5yr": 9.8,
+    "fields": [
+      "trans",
+      "iv",
+      "ai",
+      "ml"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "B",
+    "review_months": [
+      4,
+      9
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "intelligent transportation",
+      "traffic",
+      "autonomous",
+      "smart mobility"
+    ]
+  },
+  {
+    "id": "tac",
+    "name": "IEEE Transactions on Automatic Control",
+    "type": "journal",
+    "if_latest": 5.8,
+    "if_5yr": 7.2,
+    "fields": [
+      "control",
+      "systems",
+      "math"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "automatic control",
+      "systems theory",
+      "optimization",
+      "stochastic"
+    ]
+  },
+  {
+    "id": "automatica",
+    "name": "Automatica",
+    "type": "journal",
+    "if_latest": 5.4,
+    "if_5yr": 7.0,
+    "fields": [
+      "control",
+      "systems",
+      "math"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~18%",
+    "keywords": [
+      "automatic control",
+      "systems",
+      "identification",
+      "optimization"
+    ]
+  },
+  {
+    "id": "tase",
+    "name": "IEEE Transactions on Automation Science and Engineering",
+    "type": "journal",
+    "if_latest": 5.6,
+    "if_5yr": 6.4,
+    "fields": [
+      "automation",
+      "robotics",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "B",
+    "review_months": [
+      4,
+      9
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "automation",
+      "manufacturing",
+      "robotics",
+      "scheduling"
+    ]
+  },
+  {
+    "id": "tcc",
+    "name": "IEEE Transactions on Cloud Computing",
+    "type": "journal",
+    "if_latest": 4.8,
+    "if_5yr": 5.7,
+    "fields": [
+      "cloud",
+      "distributed",
+      "network"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "B",
+    "review_months": [
+      4,
+      9
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "cloud computing",
+      "distributed systems",
+      "virtualization",
+      "serverless"
+    ]
+  },
+  {
+    "id": "tii",
+    "name": "IEEE Transactions on Industrial Informatics",
+    "type": "journal",
+    "if_latest": 11.7,
+    "if_5yr": 12.5,
+    "fields": [
+      "industrial",
+      "iot",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "industrial informatics",
+      "IoT",
+      "cyber-physical",
+      "industry 4.0"
+    ]
+  },
+  {
+    "id": "tsusc",
+    "name": "IEEE Transactions on Sustainable Computing",
+    "type": "journal",
+    "if_latest": 3.9,
+    "if_5yr": 4.5,
+    "fields": [
+      "sustainable",
+      "green",
+      "edge",
+      "cloud"
+    ],
+    "cas": "2区",
+    "jcr": "Q2",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~30%",
+    "keywords": [
+      "sustainable computing",
+      "green IT",
+      "energy efficiency",
+      "edge computing"
+    ]
+  },
+  {
+    "id": "tsp",
+    "name": "IEEE Transactions on Signal Processing",
+    "type": "journal",
+    "if_latest": 4.6,
+    "if_5yr": 5.8,
+    "fields": [
+      "sigproc",
+      "math",
+      "ml"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "signal processing",
+      "estimation",
+      "detection",
+      "filtering",
+      "optimization"
+    ]
+  },
+  {
+    "id": "tsg",
+    "name": "IEEE Transactions on Smart Grid",
+    "type": "journal",
+    "if_latest": 9.6,
+    "if_5yr": 10.8,
+    "fields": [
+      "power",
+      "sg",
+      "ai",
+      "ml"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "smart grid",
+      "power systems",
+      "energy",
+      "demand response"
+    ]
+  },
+  {
+    "id": "tpwrs",
+    "name": "IEEE Transactions on Power Systems",
+    "type": "journal",
+    "if_latest": 6.5,
+    "if_5yr": 7.8,
+    "fields": [
+      "power",
+      "sg",
+      "energy"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "B",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "power systems",
+      "grid",
+      "renewable",
+      "energy management"
+    ]
+  },
+  {
+    "id": "ton",
+    "name": "IEEE/ACM Transactions on Networking",
+    "type": "journal",
+    "if_latest": 3.8,
+    "if_5yr": 4.8,
+    "fields": [
+      "network",
+      "sigcomm"
+    ],
+    "cas": "2区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "networking",
+      "protocols",
+      "routing",
+      "SDN"
+    ]
+  },
+  {
+    "id": "tdsc",
+    "name": "IEEE Transactions on Dependable and Secure Computing",
+    "type": "journal",
+    "if_latest": 7.1,
+    "if_5yr": 8.3,
+    "fields": [
+      "security",
+      "cs"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "dependable computing",
+      "security",
+      "privacy",
+      "fault tolerance"
+    ]
+  },
+  {
+    "id": "tkde",
+    "name": "IEEE Transactions on Knowledge and Data Engineering",
+    "type": "journal",
+    "if_latest": 9.5,
+    "if_5yr": 10.8,
+    "fields": [
+      "data_mining",
+      "database",
+      "ml",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "data mining",
+      "knowledge discovery",
+      "data engineering",
+      "big data"
+    ]
+  },
+  {
+    "id": "vldbj",
+    "name": "VLDB Journal",
+    "type": "journal",
+    "if_latest": 5.1,
+    "if_5yr": 6.8,
+    "fields": [
+      "database",
+      "data_mining"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "database systems",
+      "data management",
+      "query processing",
+      "big data"
+    ]
+  },
+  {
+    "id": "tmm",
+    "name": "IEEE Transactions on Multimedia",
+    "type": "journal",
+    "if_latest": 7.4,
+    "if_5yr": 8.5,
+    "fields": [
+      "multimedia",
+      "cv",
+      "ip"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "B",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "multimedia",
+      "image/video processing",
+      "audio",
+      "VR"
+    ]
+  },
+  {
+    "id": "tmi",
+    "name": "IEEE Transactions on Medical Imaging",
+    "type": "journal",
+    "if_latest": 11.0,
+    "if_5yr": 12.8,
+    "fields": [
+      "medical",
+      "cv",
+      "ip",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      9
+    ],
+    "acceptance": "~18%",
+    "keywords": [
+      "medical imaging",
+      "image processing",
+      "computer-aided diagnosis"
+    ]
+  },
+  {
+    "id": "cvpr",
+    "name": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "type": "conference",
+    "fields": [
+      "cv",
+      "ml",
+      "ai"
+    ],
+    "ccf": "A",
+    "acceptance": "~22%",
+    "keywords": [
+      "computer vision",
+      "pattern recognition",
+      "deep learning"
+    ]
+  },
+  {
+    "id": "iccv",
+    "name": "International Conference on Computer Vision (ICCV)",
+    "type": "conference",
+    "fields": [
+      "cv",
+      "ml",
+      "ai"
+    ],
+    "ccf": "A",
+    "acceptance": "~22%",
+    "keywords": [
+      "computer vision",
+      "recognition",
+      "3D",
+      "video"
+    ]
+  },
+  {
+    "id": "neurips",
+    "name": "Conference on Neural Information Processing Systems (NeurIPS)",
+    "type": "conference",
+    "fields": [
+      "ml",
+      "ai",
+      "statistics",
+      "nlp",
+      "cv"
+    ],
+    "ccf": "A",
+    "acceptance": "~23%",
+    "keywords": [
+      "machine learning",
+      "deep learning",
+      "AI",
+      "neural information processing"
+    ]
+  },
+  {
+    "id": "icml",
+    "name": "International Conference on Machine Learning (ICML)",
+    "type": "conference",
+    "fields": [
+      "ml",
+      "ai",
+      "statistics"
+    ],
+    "ccf": "A",
+    "acceptance": "~22%",
+    "keywords": [
+      "machine learning",
+      "optimization",
+      "statistics"
+    ]
+  },
+  {
+    "id": "aaai",
+    "name": "AAAI Conference on Artificial Intelligence",
+    "type": "conference",
+    "fields": [
+      "ai",
+      "ml",
+      "nlp",
+      "cv"
+    ],
+    "ccf": "A",
+    "acceptance": "~23%",
+    "keywords": [
+      "AI",
+      "machine learning",
+      "reasoning",
+      "planning"
+    ]
+  },
+  {
+    "id": "acl",
+    "name": "Annual Meeting of the Association for Computational Linguistics (ACL)",
+    "type": "conference",
+    "fields": [
+      "nlp",
+      "cl",
+      "ai"
+    ],
+    "ccf": "A",
+    "acceptance": "~24%",
+    "keywords": [
+      "computational linguistics",
+      "NLP",
+      "machine translation",
+      "dialogue"
+    ]
+  },
+  {
+    "id": "emnlp",
+    "name": "Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    "type": "conference",
+    "fields": [
+      "nlp",
+      "cl",
+      "ai"
+    ],
+    "ccf": "A",
+    "acceptance": "~23%",
+    "keywords": [
+      "NLP",
+      "empirical methods",
+      "information extraction",
+      "generation"
+    ]
+  },
+  {
+    "id": "icra",
+    "name": "IEEE International Conference on Robotics and Automation (ICRA)",
+    "type": "conference",
+    "fields": [
+      "robotics",
+      "automation",
+      "control"
+    ],
+    "ccf": "A",
+    "acceptance": "~40%",
+    "keywords": [
+      "robotics",
+      "automation",
+      "control",
+      "sensing"
+    ]
+  },
+  {
+    "id": "iros",
+    "name": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+    "type": "conference",
+    "fields": [
+      "robotics",
+      "automation",
+      "ai"
+    ],
+    "ccf": "B",
+    "acceptance": "~45%",
+    "keywords": [
+      "robotics",
+      "intelligent systems",
+      "sensors",
+      "perception"
+    ]
+  },
+  {
+    "id": "sigcomm",
+    "name": "ACM SIGCOMM",
+    "type": "conference",
+    "fields": [
+      "network",
+      "comm"
+    ],
+    "ccf": "A",
+    "acceptance": "~18%",
+    "keywords": [
+      "computer networking",
+      "protocols",
+      "internet"
+    ]
+  },
+  {
+    "id": "mobicom",
+    "name": "ACM MobiCom",
+    "type": "conference",
+    "fields": [
+      "wireless",
+      "network",
+      "mobile"
+    ],
+    "ccf": "A",
+    "acceptance": "~20%",
+    "keywords": [
+      "mobile computing",
+      "wireless networks",
+      "IoT"
+    ]
+  },
+  {
+    "id": "security",
+    "name": "IEEE Symposium on Security and Privacy (S&P)",
+    "type": "conference",
+    "fields": [
+      "security",
+      "cs"
+    ],
+    "ccf": "A",
+    "acceptance": "~14%",
+    "keywords": [
+      "security",
+      "privacy",
+      "cryptography",
+      "system security"
+    ]
+  },
+  {
+    "id": "ccs",
+    "name": "ACM Conference on Computer and Communications Security (CCS)",
+    "type": "conference",
+    "fields": [
+      "security",
+      "cs",
+      "network"
+    ],
+    "ccf": "A",
+    "acceptance": "~18%",
+    "keywords": [
+      "security",
+      "cryptography",
+      "network security",
+      "applied crypto"
+    ]
+  },
+  {
+    "id": "sigmod",
+    "name": "ACM SIGMOD",
+    "type": "conference",
+    "fields": [
+      "database",
+      "data_mining"
+    ],
+    "ccf": "A",
+    "acceptance": "~18%",
+    "keywords": [
+      "data management",
+      "database systems",
+      "query processing"
+    ]
+  },
+  {
+    "id": "vldb",
+    "name": "International Conference on Very Large Data Bases (VLDB)",
+    "type": "conference",
+    "fields": [
+      "database",
+      "data_mining"
+    ],
+    "ccf": "A",
+    "acceptance": "~20%",
+    "keywords": [
+      "database",
+      "big data",
+      "data management",
+      "scalability"
+    ]
+  },
+  {
+    "id": "kdd",
+    "name": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)",
+    "type": "conference",
+    "fields": [
+      "data_mining",
+      "ml",
+      "ai"
+    ],
+    "ccf": "A",
+    "acceptance": "~21%",
+    "keywords": [
+      "data mining",
+      "knowledge discovery",
+      "big data",
+      "applied ML"
+    ]
+  },
+  {
+    "id": "www",
+    "name": "The Web Conference (WWW)",
+    "type": "conference",
+    "fields": [
+      "web",
+      "data_mining",
+      "ai",
+      "network"
+    ],
+    "ccf": "A",
+    "acceptance": "~20%",
+    "keywords": [
+      "web",
+      "social networks",
+      "information retrieval",
+      "web mining"
+    ]
+  },
+  {
+    "id": "tc",
+    "name": "IEEE Transactions on Computers",
+    "type": "journal",
+    "if_latest": 3.6,
+    "if_5yr": 4.5,
+    "fields": [
+      "cs",
+      "computer",
+      "architecture"
+    ],
+    "cas": "2区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "computer architecture",
+      "VLSI",
+      "embedded systems",
+      "fault tolerance"
+    ]
+  },
+  {
+    "id": "tpds",
+    "name": "IEEE Transactions on Parallel and Distributed Systems",
+    "type": "journal",
+    "if_latest": 5.1,
+    "if_5yr": 6.2,
+    "fields": [
+      "parallel",
+      "distributed",
+      "systems"
+    ],
+    "cas": "2区",
+    "jcr": "Q1",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "parallel computing",
+      "distributed systems",
+      "HPC",
+      "cloud"
+    ]
+  },
+  {
+    "id": "tcsvt",
+    "name": "IEEE Transactions on Circuits and Systems for Video Technology",
+    "type": "journal",
+    "if_latest": 7.2,
+    "if_5yr": 8.0,
+    "fields": [
+      "cv",
+      "multimedia",
+      "ip"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "B",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "video coding",
+      "image processing",
+      "circuits",
+      "video streaming"
+    ]
+  },
+  {
+    "id": "tgrs",
+    "name": "IEEE Transactions on Geoscience and Remote Sensing",
+    "type": "journal",
+    "if_latest": 7.5,
+    "if_5yr": 8.2,
+    "fields": [
+      "geo",
+      "remote",
+      "ip"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      9
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "remote sensing",
+      "geoscience",
+      "image processing",
+      "SAR"
+    ]
+  },
+  {
+    "id": "tnse",
+    "name": "IEEE Transactions on Network Science and Engineering",
+    "type": "journal",
+    "if_latest": 4.4,
+    "if_5yr": 5.2,
+    "fields": [
+      "network",
+      "sg",
+      "complex"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~28%",
+    "keywords": [
+      "network science",
+      "complex networks",
+      "social networks",
+      "network theory"
+    ]
+  },
+  {
+    "id": "tai",
+    "name": "IEEE Transactions on Artificial Intelligence",
+    "type": "journal",
+    "if_latest": 5.5,
+    "if_5yr": 6.5,
+    "fields": [
+      "ai",
+      "ml",
+      "general"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "artificial intelligence",
+      "general AI",
+      "cognitive systems",
+      "AI ethics"
+    ]
+  },
+  {
+    "id": "tiv",
+    "name": "IEEE Transactions on Intelligent Vehicles",
+    "type": "journal",
+    "if_latest": 8.8,
+    "if_5yr": 9.5,
+    "fields": [
+      "iv",
+      "autonomous",
+      "robotics",
+      "ai"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      8
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "intelligent vehicles",
+      "autonomous driving",
+      "ADAS",
+      "V2X"
+    ]
+  },
+  {
+    "id": "taffc",
+    "name": "IEEE Transactions on Affective Computing",
+    "type": "journal",
+    "if_latest": 9.6,
+    "if_5yr": 10.8,
+    "fields": [
+      "affective",
+      "hci",
+      "ai",
+      "cv"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "ccf": "B",
+    "review_months": [
+      4,
+      9
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "affective computing",
+      "emotion recognition",
+      "HCI",
+      "multimodal"
+    ]
+  },
+  {
+    "id": "nature",
+    "name": "Nature",
+    "type": "journal",
+    "if_latest": 64.8,
+    "if_5yr": 70.2,
+    "fields": [
+      "general",
+      "science"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      3,
+      9
+    ],
+    "acceptance": "~8%",
+    "keywords": [
+      "general science",
+      "multidisciplinary",
+      "breakthrough"
+    ]
+  },
+  {
+    "id": "science",
+    "name": "Science",
+    "type": "journal",
+    "if_latest": 56.9,
+    "if_5yr": 61.5,
+    "fields": [
+      "general",
+      "science"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      3,
+      9
+    ],
+    "acceptance": "~7%",
+    "keywords": [
+      "general science",
+      "multidisciplinary",
+      "research"
+    ]
+  },
+  {
+    "id": "natcomms",
+    "name": "Nature Communications",
+    "type": "journal",
+    "if_latest": 16.6,
+    "if_5yr": 17.5,
+    "fields": [
+      "general",
+      "science",
+      "interdisciplinary"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      3,
+      6
+    ],
+    "acceptance": "~15%",
+    "keywords": [
+      "multidisciplinary",
+      "all sciences",
+      "open access"
+    ]
+  },
+  {
+    "id": "sa",
+    "name": "Science Advances",
+    "type": "journal",
+    "if_latest": 13.6,
+    "if_5yr": 14.8,
+    "fields": [
+      "general",
+      "science",
+      "interdisciplinary"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      3,
+      9
+    ],
+    "acceptance": "~15%",
+    "keywords": [
+      "multidisciplinary",
+      "open access",
+      "all sciences"
+    ]
+  },
+  {
+    "id": "cjc",
+    "name": "计算机学报",
+    "type": "journal",
+    "fields": [
+      "cs",
+      "general"
+    ],
+    "cas": "1区",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~20%",
+    "keywords": [
+      "计算机科学",
+      "人工智能",
+      "软件",
+      "体系结构"
+    ]
+  },
+  {
+    "id": "jos",
+    "name": "软件学报",
+    "type": "journal",
+    "fields": [
+      "cs",
+      "software"
+    ],
+    "cas": "1区",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "软件工程",
+      "系统",
+      "程序设计语言",
+      "数据库"
+    ]
+  },
+  {
+    "id": "jcrd",
+    "name": "计算机研究与发展",
+    "type": "journal",
+    "fields": [
+      "cs",
+      "general"
+    ],
+    "cas": "1区",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~22%",
+    "keywords": [
+      "计算机科学",
+      "体系结构",
+      "网络",
+      "信息安全"
+    ]
+  },
+  {
+    "id": "actaauto",
+    "name": "自动化学报",
+    "type": "journal",
+    "fields": [
+      "control",
+      "ai",
+      "cs"
+    ],
+    "cas": "1区",
+    "ccf": "A",
+    "review_months": [
+      6,
+      12
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "自动化",
+      "控制",
+      "人工智能",
+      "模式识别"
+    ]
+  },
+  {
+    "id": "scichina",
+    "name": "中国科学：信息科学",
+    "type": "journal",
+    "if_latest": 8.8,
+    "if_5yr": 9.5,
+    "fields": [
+      "cs",
+      "general"
+    ],
+    "cas": "1区",
+    "jcr": "Q1",
+    "review_months": [
+      4,
+      9
+    ],
+    "acceptance": "~25%",
+    "keywords": [
+      "信息科学",
+      "计算机",
+      "通信",
+      "控制"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+default = "gbt7714"
+allowed = ["gbt7714", "ieee", "apa", "bibtex"]
+
+[styles.gbt7714]
+label = "GB/T 7714-like numbered references"
+
+[styles.ieee]
+label = "IEEE numbered references"
+
+[styles.apa]
+label = "APA author-year references"
+
+[styles.bibtex]
+label = "BibTeX export entries"

@@ -1,0 +1,43 @@
+﻿# Frontend dependencies and build output
+node_modules/
+dist/
+.npm-cache/
+.npm-home/
+
+# Python environments, caches, and generated runtime workspaces
+venv/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+*$py.class
+pysrc/workspace/
+
+# Runtime state, logs, screenshots, and local process files
+.runtime/
+log/
+logs/
+*.log
+*.pid
+error_dump.html
+
+# Local Docker and launcher state
+.docker-cli/
+megatron.lang
+
+# Local secrets and machine-specific config
+.env
+.env.*
+model.toml
+pysrc/model.toml
+*.toml.bak
+
+# Browser cookie files (yt-dlp, etc.)
+pysrc/firefox
+pysrc/cookies.txt
+*cookies.txt
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

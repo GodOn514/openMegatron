@@ -1,0 +1,120 @@
+[llm]
+active_provider = "openai"
+
+[llm.openai]
+label = "OpenAI"
+api_key = ""
+base_url = "https://api.openai.com/v1"
+model = "gpt-4o-mini"
+models = ["gpt-4.1", "gpt-4.1-mini", "gpt-4o", "gpt-4o-mini", "o4-mini"]
+
+[llm.openai.extra_params]
+
+[llm.deepseek]
+label = "DeepSeek"
+api_key = ""
+base_url = "https://api.deepseek.com"
+model = "deepseek-chat"
+models = ["deepseek-chat", "deepseek-reasoner"]
+
+[llm.deepseek.extra_params]
+
+[llm.qwen]
+label = "通义千问 / Qwen"
+api_key = ""
+base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+model = "qwen-plus"
+models = ["qwen-plus", "qwen-max", "qwen-turbo", "qwen-long"]
+
+[llm.qwen.extra_params]
+
+[llm.moonshot]
+label = "Moonshot"
+api_key = ""
+base_url = "https://api.moonshot.cn/v1"
+model = "moonshot-v1-8k"
+models = ["moonshot-v1-8k", "moonshot-v1-32k", "moonshot-v1-128k"]
+
+[llm.moonshot.extra_params]
+
+[llm.zhipu]
+label = "智谱 / Zhipu"
+api_key = ""
+base_url = "https://open.bigmodel.cn/api/paas/v4"
+model = "glm-4-flash"
+models = ["glm-4-flash", "glm-4-plus", "glm-4-air"]
+
+[llm.zhipu.extra_params]
+
+[llm.minimax]
+label = "MiniMax"
+api_key = ""
+base_url = "https://api.minimax.chat/v1"
+model = "MiniMax-Text-01"
+models = ["MiniMax-Text-01", "MiniMax-M1"]
+
+[llm.minimax.extra_params]
+
+[llm.stepfun]
+label = "阶跃星辰 / Stepfun"
+api_key = ""
+base_url = "https://api.stepfun.com/v1"
+model = "step-2-mini"
+models = ["step-2-mini", "step-2-16k", "step-1-8k"]
+
+[llm.stepfun.extra_params]
+
+[llm.siliconflow]
+label = "硅基流动 / SiliconFlow"
+api_key = ""
+base_url = "https://api.siliconflow.cn/v1"
+model = "Qwen/Qwen2.5-72B-Instruct"
+models = ["Qwen/Qwen2.5-72B-Instruct", "deepseek-ai/DeepSeek-V3", "deepseek-ai/DeepSeek-R1"]
+
+[llm.siliconflow.extra_params]
+
+[llm.openrouter]
+label = "OpenRouter"
+api_key = ""
+base_url = "https://openrouter.ai/api/v1"
+model = "openai/gpt-4o-mini"
+models = ["openai/gpt-4o-mini", "anthropic/claude-3.5-sonnet", "google/gemini-2.0-flash-001"]
+
+[llm.openrouter.extra_params]
+
+[redis]
+host = "localhost"
+port = 6379
+password = "root"
+blpop_timeout = 5
+socket_connect_timeout = 3
+socket_timeout = 10
+health_check_interval = 30
+
+[postgresql]
+host = "localhost"
+port = 54320
+user = "root"
+password = "root"
+database = "root"
+
+[postgres]
+host = "localhost"
+port = 54320
+user = "root"
+password = "root"
+database = "root"
+
+[pgvector]
+host = "localhost"
+port = 54320
+user = "root"
+password = "root"
+database = "root"
+
+[neo4j]
+uri = "bolt://localhost:7687"
+user = "neo4j"
+password = "root"
+http_port = 7474
+bolt_port = 7687

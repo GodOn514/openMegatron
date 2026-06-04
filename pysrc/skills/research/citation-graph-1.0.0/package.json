@@ -1,0 +1,10 @@
+﻿{
+  "name": "citation-graph",
+  "version": "1.0.0",
+  "description": "引文图谱构建工具 - 支持多深度引用扩展、时间线分析、主题聚类、Mermaid可视化",
+  "author": "YuanGe AI",
+  "license": "MIT",
+  "keywords": ["citation", "graph", "openalex", "references", "mermaid"],
+  "scripts": { "run": "python3 scripts/citation_graph.py" },
+  "changelog": "v1.0.0: 增强版 - 多深度扩展、时间线、聚类、Mermaid输出"
+}

@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg15
+    container_name: megatron_postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: root
+    ports:
+      - "54320:5432"
+    restart: always
+  redis:
+    image: redis:alpine
+    container_name: megatron_redis
+    command: redis-server --requirepass root
+    ports:
+      - "6379:6379"
+    restart: always
+  neo4j:
+    image: neo4j:5
+    container_name: megatron_neo4j
+    environment:
+      NEO4J_AUTH: neo4j/root
+      NEO4J_dbms_security_auth__minimum__password__length: 4
+    ports:
+      - "7474:7474"
+      - "7781:7687"
+    restart: always

@@ -1,0 +1,47 @@
+[[sources]]
+name = "ICLR OpenReview"
+url = "https://openreview.net/group?id=ICLR.cc/2026/Conference"
+venue = "ICLR"
+domain = ["ai", "ml"]
+top_venue = true
+kind = "conference_page"
+
+[[sources]]
+name = "NeurIPS"
+url = "https://neurips.cc/"
+venue = "NeurIPS"
+domain = ["ai", "ml"]
+top_venue = true
+kind = "conference_page"
+
+[[sources]]
+name = "ACL Anthology"
+url = "https://aclanthology.org/events/acl-2026/"
+venue = "ACL"
+domain = ["ai", "nlp"]
+top_venue = true
+kind = "proceedings_page"
+
+[[sources]]
+name = "arXiv cs.AI"
+url = "http://export.arxiv.org/rss/cs.AI"
+venue = "preprint"
+domain = ["ai"]
+top_venue = false
+kind = "rss"
+
+[[sources]]
+name = "arXiv cs.CL"
+url = "http://export.arxiv.org/rss/cs.CL"
+venue = "preprint"
+domain = ["ai", "nlp"]
+top_venue = false
+kind = "rss"
+
+[[sources]]
+name = "Hugging Face Papers"
+url = "https://huggingface.co/papers/rss"
+venue = "community_digest"
+domain = ["ai"]
+top_venue = false
+kind = "rss"

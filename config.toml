@@ -1,0 +1,72 @@
+[frontend]
+port = 3000
+
+[zh]
+hubTitle = "源哥 AI"
+hubSub = "本地智能体工作台"
+activeTasks = "正在推进"
+completedTasks = "最近完成"
+connectedTo = "连接"
+secureSandbox = "安全执行通道"
+inputHint = "本地会话已就绪"
+inputPlace = "给智能体一个任务..."
+monitorTitle = "运行状态"
+monitorAirGap = "本地受控执行"
+monitorAirDesc = "后端、数据库和技能目录都在本机项目环境中运行，敏感配置不会在前端展示。"
+monitorLockLabel = "后端状态"
+monitorLocked = "待命"
+monitorHardware = "资源概览"
+monitorCpu = "处理负载"
+monitorMem = "内存占用"
+monitorNet = "磁盘占用"
+monitorLocal = "本机环境"
+monitorCpuLoad = "技能数量"
+monitorBattery = "响应延迟"
+monitorSafe = "工作区已就绪"
+
+activeTasksList = [
+  { name = "科研综述链路", icon = "FileText" },
+  { name = "代码技能路由", icon = "Code2" },
+  { name = "媒体处理（含视频制作）", icon = "Clapperboard" }
+]
+
+completedTasksList = [
+  { name = "顶刊顶会检索", icon = "CheckCircle2" },
+  { name = "研究空白分析", icon = "CheckCircle2" },
+  { name = "引用格式与校验", icon = "CheckCircle2" }
+]
+
+[en]
+hubTitle = "YuanGe AI"
+hubSub = "Local Agent Workspace"
+activeTasks = "In Progress"
+completedTasks = "Recent"
+connectedTo = "Connected"
+secureSandbox = "Guarded Execution"
+inputHint = "Local session ready"
+inputPlace = "Give the agent a task..."
+monitorTitle = "Runtime"
+monitorAirGap = "Controlled Local Runtime"
+monitorAirDesc = "The backend, databases, and skill folders run inside this local project. Sensitive config is never shown here."
+monitorLockLabel = "Backend"
+monitorLocked = "Standby"
+monitorHardware = "Resources"
+monitorCpu = "Compute Load"
+monitorMem = "Memory Use"
+monitorNet = "Disk Use"
+monitorLocal = "Local Runtime"
+monitorCpuLoad = "Skills"
+monitorBattery = "Latency"
+monitorSafe = "Workspace Ready"
+
+activeTasksList = [
+  { name = "Research Review Pipeline", icon = "FileText" },
+  { name = "Code Assistant Router", icon = "Code2" },
+  { name = "Media Processing + Video", icon = "Clapperboard" }
+]
+
+completedTasksList = [
+  { name = "Top Venue Search", icon = "CheckCircle2" },
+  { name = "Research Gap Analysis", icon = "CheckCircle2" },
+  { name = "Citation Styles & Checks", icon = "CheckCircle2" }
+]
