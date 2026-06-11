@@ -1,132 +1,217 @@
-"""literature_graph_db.py - 文献图谱持久化层
+"""SQLite-backed persistence for the literature knowledge graph."""
 
-提供给 MemoryDatabases 的 store_paper_graph / query_literature_graph / search_papers_by_embedding 方法。
-这些方法使用 pg_pool 和 service 进行操作。
+import json
+import sqlite3
+from typing import Optional
+
+# ── SQL constants ────────────────────────────────────────────────────────────
+
+SQL_CREATE_PAPERS = """
+CREATE TABLE IF NOT EXISTS papers (
+    id TEXT PRIMARY KEY,
+    title TEXT NOT NULL,
+    authors TEXT NOT NULL,
+    year INTEGER,
+    venue TEXT,
+    abstract TEXT,
+    keywords TEXT,
+    metadata TEXT
+)
 """
 
+SQL_CREATE_AUTHORS = """
+CREATE TABLE IF NOT EXISTS authors (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    affiliation TEXT,
+    metadata TEXT
+)
+"""
 
-async def store_paper_graph(memory_db, graph_data: dict) -> str:
-    """Persist a literature graph into the hypergraph store."""
-    import json as _j
-    d = chr(36)
-    nodes = graph_data.get("nodes", [])
-    edges = graph_data.get("edges", [])
-    review_id = graph_data.get("review_id") or memory_db.service.stable_id(
-        "litrev", {"time": memory_db.service.utc_iso()}
-    )
-    async with memory_db.pg_pool.acquire() as conn:
-        await conn.execute(
-            "INSERT INTO memory_hyperedges (id, edge_type, label, summary, confidence, metadata, created_at, updated_at) VALUES ("
-            + d + "1, " + d + "2, " + d + "3, " + d + "4, " + d + "5, " + d + "6::jsonb, NOW(), NOW())"
-            + " ON CONFLICT (id) DO UPDATE SET edge_type = EXCLUDED.edge_type, label = EXCLUDED.label,"
-            + " summary = EXCLUDED.summary, confidence = EXCLUDED.confidence, metadata = EXCLUDED.metadata, updated_at = NOW()",
-            review_id, "literature_review", "Literature Review",
-            _j.dumps({"node_count": len(nodes), "edge_count": len(edges), "review_id": review_id}),
-            1.0,
-            _j.dumps({"review_id": review_id, "ontology": "ontology-guided-hypergraph-memory.v2"}),
+SQL_CREATE_CITATIONS = """
+CREATE TABLE IF NOT EXISTS citations (
+    source_id TEXT NOT NULL,
+    target_id TEXT NOT NULL,
+    context TEXT,
+    PRIMARY KEY (source_id, target_id),
+    FOREIGN KEY (source_id) REFERENCES papers(id),
+    FOREIGN KEY (target_id) REFERENCES papers(id)
+)
+"""
+
+SQL_INSERT_PAPER = """
+INSERT OR REPLACE INTO papers (id, title, authors, year, venue, abstract, keywords, metadata)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+"""
+
+SQL_INSERT_AUTHOR = """
+INSERT OR REPLACE INTO authors (id, name, affiliation, metadata)
+VALUES (?, ?, ?, ?)
+"""
+
+SQL_INSERT_CITATION = """
+INSERT OR REPLACE INTO citations (source_id, target_id, context)
+VALUES (?, ?, ?)
+"""
+
+SQL_SELECT_PAPER = "SELECT * FROM papers WHERE id = ?"
+SQL_SELECT_AUTHOR = "SELECT * FROM authors WHERE id = ?"
+SQL_SELECT_CITATIONS_BY_SOURCE = "SELECT * FROM citations WHERE source_id = ?"
+SQL_SELECT_CITATIONS_BY_TARGET = "SELECT * FROM citations WHERE target_id = ?"
+SQL_SEARCH_PAPERS = "SELECT * FROM papers WHERE title LIKE ? OR abstract LIKE ?"
+SQL_SEARCH_AUTHORS = "SELECT * FROM authors WHERE name LIKE ?"
+SQL_DELETE_PAPER = "DELETE FROM papers WHERE id = ?"
+SQL_DELETE_AUTHOR = "DELETE FROM authors WHERE id = ?"
+SQL_DELETE_CITATION = "DELETE FROM citations WHERE source_id = ? AND target_id = ?"
+SQL_COUNT_PAPERS = "SELECT COUNT(*) FROM papers"
+SQL_COUNT_AUTHORS = "SELECT COUNT(*) FROM authors"
+SQL_COUNT_CITATIONS = "SELECT COUNT(*) FROM citations"
+
+
+class LiteratureGraphDB:
+    """SQLite-backed persistence layer for the literature knowledge graph."""
+
+    def __init__(self, db_path: str = ":memory:"):
+        self._conn = sqlite3.connect(db_path, check_same_thread=False)
+        self._conn.row_factory = sqlite3.Row
+        self._init_schema()
+
+    def _init_schema(self) -> None:
+        """Create tables if they don't exist."""
+        self._conn.executescript(
+            SQL_CREATE_PAPERS + SQL_CREATE_AUTHORS + SQL_CREATE_CITATIONS
         )
-        for n in nodes:
-            pid = n.get("id") or memory_db.service.ontology_node_id("paper", n.get("title", ""))
-            label = (n.get("title") or "")[:200] or pid
-            await memory_db.service._upsert_ontology_node(conn, pid, "paper", label, {
-                "source": "citation_graph", "title": (n.get("title") or "")[:500],
-                "year": n.get("year"), "venue": (n.get("venue") or "")[:200],
-                "citations": n.get("citations", 0), "doi": (n.get("doi") or "")[:200],
-                "authors": (n.get("authors") or "")[:500], "type": n.get("type", "journal"),
-                "external": n.get("external", False),
-                "concepts": _j.dumps(n.get("concepts", [])),
-            })
-            await memory_db.service._upsert_hyperedge_member(conn, review_id, pid, "paper", "paper", 0.9, {"title": label[:200]})
-            sql_link = ("INSERT INTO memory_links (source_id, target_id, relation, confidence, metadata, created_at) VALUES ("
-                        + d + "1, " + d + "2, " + d + "3, " + d + "4, " + d + "5::jsonb, NOW())"
-                        + " ON CONFLICT (source_id, target_id, relation) DO NOTHING")
-            for a_name in [a.strip() for a in str(n.get("authors") or "").split(";") if a.strip()]:
-                aid = memory_db.service.ontology_node_id("author", a_name)
-                await memory_db.service._upsert_ontology_node(conn, aid, "author", a_name, {"source": "citation_graph"})
-                await conn.execute(sql_link, pid, aid, "authored_by", 1.0, _j.dumps({"author": a_name}))
-            venue_str = str(n.get("venue") or "").strip()
-            if venue_str:
-                vid = memory_db.service.ontology_node_id("venue", venue_str)
-                await memory_db.service._upsert_ontology_node(conn, vid, "venue", venue_str, {"source": "citation_graph"})
-                await conn.execute(sql_link, pid, vid, "published_in", 0.9, _j.dumps({"venue": venue_str}))
-        known = {n.get("id"): True for n in nodes if n.get("id")}
-        for e in edges:
-            s, t = e.get("source", ""), e.get("target", "")
-            if s in known and t in known:
-                await conn.execute(sql_link, s, t, str(e.get("type", "cites")), 0.85, _j.dumps({"edge_type": e.get("type", "cites")}))
-    return review_id
+        self._conn.commit()
 
+    # ── Paper CRUD ────────────────────────────────────────────────────────
 
-async def query_literature_graph(memory_db, paper_title: str = None, topic: str = None, limit: int = 50) -> dict:
-    """Retrieve stored literature graph with indexed ILIKE search."""
-    if not memory_db.service:
-        return {"nodes": [], "edges": []}
-    d = chr(36)
-    async with memory_db.pg_pool.acquire() as conn:
-        if paper_title:
-            fuzzy = "%" + paper_title.replace("%", "\\%") + "%"
-            sql = ("SELECT source_id, metadata FROM memory_links WHERE relation = 'is_a'"
-                   " AND metadata->>'kind' = 'paper' AND metadata->>'title' ILIKE "
-                   + d + "1 LIMIT " + d + "2")
-            link_rows = await conn.fetch(sql, fuzzy, limit)
-        else:
-            sql = ("SELECT source_id, metadata FROM memory_links WHERE relation = 'is_a'"
-                   " AND metadata->>'kind' = 'paper' ORDER BY created_at DESC LIMIT "
-                   + d + "1")
-            link_rows = await conn.fetch(sql, limit)
-        nodes = []
-        seen = set()
-        for r in link_rows:
-            pid = r["source_id"]
-            if pid in seen:
-                continue
-            seen.add(pid)
-            md = r["metadata"] or {}
-            nodes.append({
-                "id": pid, "title": md.get("title", md.get("label", "")),
-                "year": md.get("year"), "venue": md.get("venue", ""),
-                "citations": md.get("citations", 0), "doi": md.get("doi", ""),
-                "authors": md.get("authors", ""), "type": md.get("type", "journal"),
-            })
-        edges = []
-        if nodes:
-            pids = [n["id"] for n in nodes]
-            sql2 = ("SELECT source_id, target_id, relation FROM memory_links"
-                    " WHERE source_id = ANY(" + d + "1::text[]) AND target_id = ANY(" + d + "2::text[])"
-                    " AND relation IN ('cites','surveys','extends')")
-            erows = await conn.fetch(sql2, pids, pids)
-            for er in erows:
-                edges.append({"source": er["source_id"], "target": er["target_id"], "type": er["relation"]})
-    return {"nodes": nodes, "edges": edges}
-
-async def search_papers_by_embedding(memory_db, query: str, top_k: int = 10) -> list[dict]:
-    """Real vector-based semantic search over stored papers."""
-    if not memory_db.service:
-        return []
-    if not hasattr(memory_db, 'embedder') or not memory_db.embedder:
-        return []
-    import numpy as np
-    import asyncio
-    vec = await asyncio.to_thread(memory_db.embedder.encode, [query])
-    query_emb = vec[0].tolist() if hasattr(vec[0], "tolist") else list(vec[0])
-    async with memory_db.pg_pool.acquire() as conn:
-        await register_vector(conn)
-        rows = await conn.fetch(
-            "SELECT ml.source_id AS paper_id, ml.metadata, em.text,",
-            " (em.embedding <=> $1) AS distance",
-            " FROM memory_links ml",
-            " JOIN episodic_memory em ON em.id = ml.source_id",
-            " WHERE ml.relation = 'is_a' AND ml.metadata->>'kind' = 'paper'",
-            " ORDER BY em.embedding <=> $1",
-            " LIMIT $2",
-            query_emb, top_k,
+    def add_paper(self, paper: dict) -> None:
+        """Insert or replace a paper."""
+        self._conn.execute(
+            SQL_INSERT_PAPER,
+            (
+                paper["id"],
+                paper["title"],
+                json.dumps(paper.get("authors", [])),
+                paper.get("year"),
+                paper.get("venue"),
+                paper.get("abstract"),
+                json.dumps(paper.get("keywords", [])),
+                json.dumps(paper.get("metadata", {})),
+            ),
         )
-    results = []
-    for r in rows:
-        md = r["metadata"] or {}
-        md["paper_id"] = r["paper_id"]
-        md["score"] = 1.0 / (1.0 + float(r.get("distance") or 0.0))
-        md["excerpt"] = (r["text"] or "")[:200]
-        results.append(md)
-    return results
+        self._conn.commit()
 
+    def get_paper(self, paper_id: str) -> Optional[dict]:
+        """Retrieve a paper by ID."""
+        row = self._conn.execute(SQL_SELECT_PAPER, (paper_id,)).fetchone()
+        return self._row_to_paper(row) if row else None
+
+    def search_papers(self, query: str) -> list[dict]:
+        """Full-text-ish search over title and abstract."""
+        pattern = f"%{query}%"
+        rows = self._conn.execute(SQL_SEARCH_PAPERS, (pattern, pattern)).fetchall()
+        return [self._row_to_paper(r) for r in rows]
+
+    def delete_paper(self, paper_id: str) -> bool:
+        """Delete a paper. Returns True if it existed."""
+        cur = self._conn.execute(SQL_DELETE_PAPER, (paper_id,))
+        self._conn.commit()
+        return cur.rowcount > 0
+
+    # ── Author CRUD ───────────────────────────────────────────────────────
+
+    def add_author(self, author: dict) -> None:
+        """Insert or replace an author."""
+        self._conn.execute(
+            SQL_INSERT_AUTHOR,
+            (
+                author["id"],
+                author["name"],
+                author.get("affiliation"),
+                json.dumps(author.get("metadata", {})),
+            ),
+        )
+        self._conn.commit()
+
+    def get_author(self, author_id: str) -> Optional[dict]:
+        """Retrieve an author by ID."""
+        row = self._conn.execute(SQL_SELECT_AUTHOR, (author_id,)).fetchone()
+        return self._row_to_author(row) if row else None
+
+    def search_authors(self, query: str) -> list[dict]:
+        """Search authors by name."""
+        pattern = f"%{query}%"
+        rows = self._conn.execute(SQL_SEARCH_AUTHORS, (pattern,)).fetchall()
+        return [self._row_to_author(r) for r in rows]
+
+    def delete_author(self, author_id: str) -> bool:
+        """Delete an author. Returns True if it existed."""
+        cur = self._conn.execute(SQL_DELETE_AUTHOR, (author_id,))
+        self._conn.commit()
+        return cur.rowcount > 0
+
+    # ── Citation CRUD ─────────────────────────────────────────────────────
+
+    def add_citation(self, source_id: str, target_id: str, context: Optional[str] = None) -> None:
+        """Add a citation edge."""
+        self._conn.execute(SQL_INSERT_CITATION, (source_id, target_id, context))
+        self._conn.commit()
+
+    def get_citations_from(self, paper_id: str) -> list[dict]:
+        """Get papers cited by this paper."""
+        rows = self._conn.execute(SQL_SELECT_CITATIONS_BY_SOURCE, (paper_id,)).fetchall()
+        return [self._row_to_citation(r) for r in rows]
+
+    def get_citations_to(self, paper_id: str) -> list[dict]:
+        """Get papers that cite this paper."""
+        rows = self._conn.execute(SQL_SELECT_CITATIONS_BY_TARGET, (paper_id,)).fetchall()
+        return [self._row_to_citation(r) for r in rows]
+
+    def delete_citation(self, source_id: str, target_id: str) -> bool:
+        """Delete a citation edge. Returns True if it existed."""
+        cur = self._conn.execute(SQL_DELETE_CITATION, (source_id, target_id))
+        self._conn.commit()
+        return cur.rowcount > 0
+
+    # ── Stats ─────────────────────────────────────────────────────────────
+
+    def stats(self) -> dict:
+        """Return row counts."""
+        return {
+            "papers": self._conn.execute(SQL_COUNT_PAPERS).fetchone()[0],
+            "authors": self._conn.execute(SQL_COUNT_AUTHORS).fetchone()[0],
+            "citations": self._conn.execute(SQL_COUNT_CITATIONS).fetchone()[0],
+        }
+
+    # ── Helpers ───────────────────────────────────────────────────────────
+
+    @staticmethod
+    def _row_to_paper(row: sqlite3.Row) -> dict:
+        return {
+            "id": row["id"],
+            "title": row["title"],
+            "authors": json.loads(row["authors"]),
+            "year": row["year"],
+            "venue": row["venue"],
+            "abstract": row["abstract"],
+            "keywords": json.loads(row["keywords"]),
+            "metadata": json.loads(row["metadata"]),
+        }
+
+    @staticmethod
+    def _row_to_author(row: sqlite3.Row) -> dict:
+        return {
+            "id": row["id"],
+            "name": row["name"],
+            "affiliation": row["affiliation"],
+            "metadata": json.loads(row["metadata"]),
+        }
+
+    @staticmethod
+    def _row_to_citation(row: sqlite3.Row) -> dict:
+        return {
+            "source_id": row["source_id"],
+            "target_id": row["target_id"],
+            "context": row["context"],
+        }
